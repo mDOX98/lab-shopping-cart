@@ -6,6 +6,9 @@ const { equal } = require('assert');
 const app = express();
 
 
+const PORT = 3000;
+const ROOT = `https://localhost:${PORT}`;
+
 // parse application.x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
     extended: false
@@ -13,7 +16,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.listen(3000, () => console.log('Server listening on port 3000!'));
+app.listen(3000, () => console.log(`Server listening on port ${PORT}!`));
 
 var products = [
     {id: '0', name: "Bananas", price: 3},
